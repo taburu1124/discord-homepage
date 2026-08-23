@@ -3,78 +3,187 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>超かぐや姫（非公式）</title>
 
+    <!-- スマホ対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discord Server</title>
+
+    <!-- CSSを読み込む -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- ヘッダー -->
     <header>
-        <div class="logo">超かぐや姫</div>
+        <div class="header-inner">
+            <div class="logo">SERVER</div>
+
+            <nav>
+                <a href="#about">サーバーについて</a>
+                <a href="#news">お知らせ</a>
+            </nav>
+        </div>
     </header>
 
+
+    <!-- メイン -->
     <main>
 
+        <!-- トップ -->
         <section class="hero">
 
-            <div class="server-icon">
-                🌙
-            </div>
+            <div class="hero-content">
 
-            <p class="unofficial">UNOFFICIAL FAN SERVER</p>
+                <div class="server-logo">
+                    <span>🎮</span>
+                </div>
 
-            <h1>超かぐや姫<br>（非公式）</h1>
+                <p class="small-title">
+                    DISCORD COMMUNITY
+                </p>
 
-            <p class="description">
-                「超かぐや姫」について語ったり、<br>
-                みんなで交流したりするDiscordサーバーです。
-            </p>
+                <h1>
+                    Discord Server
+                </h1>
 
-            <a class="join-button"
-               href="https://discord.gg/ここに招待コード">
-                Discordに参加する
-            </a>
+                <p class="description">
+                    みんなで楽しく活動している<br>
+                    Discordサーバーです。
+                </p>
 
-        </section>
+                <a
+                    class="join-button"
+                    href="https://discord.gg/ここに招待コード"
+                    target="_blank"
+                >
+                    Discordに参加する
+                    <span>→</span>
+                </a>
 
-
-        <section class="about">
-
-            <h2>このサーバーについて</h2>
-
-            <p>
-                超かぐや姫が好きな人たちが集まる<br>
-                非公式Discordサーバーです。
-            </p>
-
-            <div class="owner">
-                <span>SERVER OWNER</span>
-                <strong>taburu</strong>
             </div>
 
         </section>
 
 
-        <section class="news">
+        <!-- サーバーについて -->
+        <section id="about" class="section">
 
-            <h2>お知らせ</h2>
+            <p class="section-label">
+                ABOUT
+            </p>
+
+            <h2>
+                このサーバーについて
+            </h2>
+
+            <p class="section-text">
+                ゲームや雑談などを中心に、<br>
+                みんなで楽しく交流しています。
+            </p>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">🎮</div>
+                    <h3>ゲーム</h3>
+                    <p>
+                        一緒にゲームを楽しもう！
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>雑談</h3>
+                    <p>
+                        気軽に話せる場所です。
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>交流</h3>
+                    <p>
+                        みんなで楽しく交流！
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- お知らせ -->
+        <section id="news" class="section news-section">
+
+            <p class="section-label">
+                NEWS
+            </p>
+
+            <h2>
+                お知らせ
+            </h2>
+
 
             <div class="news-box">
-                <span>2026.08.23</span>
-                <h3>ホームページを公開しました</h3>
+
+                <div class="news-date">
+                    2026.08.23
+                </div>
+
+                <h3>
+                    サーバーホームページを開設しました！
+                </h3>
+
+                <p>
+                    これからいろいろな情報を掲載していきます。
+                </p>
+
             </div>
+
+        </section>
+
+
+        <!-- 参加 -->
+        <section class="join-section">
+
+            <h2>
+                一緒に楽しもう！
+            </h2>
+
+            <p>
+                Discordサーバーへの参加はこちらから。
+            </p>
+
+            <a
+                class="join-button"
+                href="https://discord.gg/ここに招待コード"
+                target="_blank"
+            >
+                Discordに参加する
+                <span>→</span>
+            </a>
 
         </section>
 
     </main>
 
 
+    <!-- フッター -->
     <footer>
-        <p>© 2026 超かぐや姫（非公式）</p>
-        <p>Unofficial Fan Community</p>
+
+        <div class="footer-logo">
+            SERVER
+        </div>
+
+        <p>
+            © 2026 Discord Server
+        </p>
+
     </footer>
+
 
 </body>
 </html>
