@@ -1,158 +1,516 @@
+/* =========================
+   基本設定
+========================= */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     background: #ffffff;
-    color: #222222;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 "Noto Sans JP", sans-serif;
+    color: #202225;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans JP",
+        sans-serif;
 }
+
+
+/* =========================
+   ヘッダー
+========================= */
 
 header {
     position: sticky;
     top: 0;
+    z-index: 100;
+
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+
     border-bottom: 1px solid #eeeeee;
-    padding: 18px 24px;
-    z-index: 10;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px;
 }
 
 .logo {
-    max-width: 900px;
-    margin: auto;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-main {
-    max-width: 900px;
-    margin: auto;
-}
-
-.hero {
-    min-height: 650px;
-    padding: 100px 25px;
+nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 25px;
 }
 
-.server-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.unofficial {
-    color: #888888;
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-}
-
-.hero h1 {
-    font-size: clamp(40px, 9vw, 72px);
-    line-height: 1.15;
-    margin: 0 0 25px;
-    letter-spacing: -2px;
-}
-
-.description {
-    color: #666666;
-    line-height: 2;
-    font-size: 16px;
-    margin-bottom: 35px;
-}
-
-.join-button {
-    display: inline-block;
-    background: #222222;
-    color: white;
-    padding: 16px 34px;
-    border-radius: 999px;
+nav a {
+    color: #555555;
     text-decoration: none;
+    font-size: 14px;
     font-weight: 600;
+
     transition: 0.2s;
 }
 
-.join-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+nav a:hover {
+    color: #5865f2;
 }
 
-.about,
-.news {
-    padding: 90px 25px;
-    border-top: 1px solid #eeeeee;
+
+/* =========================
+   トップ
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #f1f3ff 0%,
+            #ffffff 45%
+        );
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* サーバーロゴ */
+
+.server-logo {
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 32px;
+
+    background: #f0f1ff;
+
+    box-shadow:
+        0 15px 40px rgba(88, 101, 242, 0.12);
+}
+
+.server-logo span {
+    font-size: 50px;
+}
+
+
+/* 小さいタイトル */
+
+.small-title {
+    margin: 0 0 15px;
+
+    color: #5865f2;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+/* メインタイトル */
+
+.hero h1 {
+    margin: 0;
+
+    color: #202225;
+
+    font-size: clamp(42px, 9vw, 72px);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+/* 説明 */
+
+.description {
+    margin: 25px 0 35px;
+
+    color: #6b6f76;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+.join-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 16px 28px;
+
+    border-radius: 12px;
+
+    background: #5865f2;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(88, 101, 242, 0.25);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+.join-button:hover {
+    background: #4752c4;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(88, 101, 242, 0.3);
+}
+
+.join-button span {
+    font-size: 20px;
+}
+
+
+/* =========================
+   セクション
+========================= */
+
+.section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 100px 24px;
+
     text-align: center;
 }
 
-h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
+.section-label {
+    margin: 0 0 12px;
+
+    color: #5865f2;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
 }
 
-.about > p {
-    color: #666666;
-    line-height: 2;
+.section h2 {
+    margin: 0;
+
+    font-size: 36px;
+    font-weight: 800;
 }
 
-.owner {
-    margin: 40px auto 0;
-    padding: 25px;
-    max-width: 350px;
-    background: #fafafa;
+.section-text {
+    margin: 25px 0 50px;
+
+    color: #777777;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   カード
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    padding: 35px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
     border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
-.owner span {
-    display: block;
-    color: #999999;
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-.owner strong {
-    font-size: 22px;
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.card p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   お知らせ
+========================= */
+
+.news-section {
+    border-top: 1px solid #eeeeee;
 }
 
 .news-box {
-    max-width: 600px;
-    margin: auto;
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
     padding: 25px;
-    background: #fafafa;
-    border: 1px solid #eeeeee;
-    border-radius: 18px;
+
     text-align: left;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
 }
 
-.news-box span {
-    color: #999999;
+.news-date {
+    color: #5865f2;
+
     font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
 }
 
 .news-box h3 {
-    margin-bottom: 0;
+    margin: 0 0 10px;
+
+    font-size: 18px;
 }
 
-footer {
-    padding: 50px 20px;
+.news-box p {
+    margin: 0;
+
+    color: #777777;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   参加セクション
+========================= */
+
+.join-section {
+    padding: 100px 24px;
+
     text-align: center;
+
+    background: #f7f8ff;
+}
+
+.join-section h2 {
+    margin: 0 0 15px;
+
+    font-size: 36px;
+}
+
+.join-section p {
+    margin: 0 0 30px;
+
+    color: #777777;
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
     border-top: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.footer-logo {
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+footer p {
+    margin: 10px 0 0;
+
     color: #999999;
-    font-size: 12px;
-    line-height: 1.8;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   スマホ対応
+========================= */
+
+@media (max-width: 600px) {
+
+    /* ヘッダー */
+
+    .header-inner {
+        height: 60px;
+
+        padding: 0 18px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* トップ */
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 20px;
+    }
+
+    .server-logo {
+        width: 100px;
+        height: 100px;
+
+        border-radius: 27px;
+    }
+
+    .server-logo span {
+        font-size: 42px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    /* セクション */
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+
+    /* カード */
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+
+    /* 参加 */
+
+    .join-section {
+        padding: 75px 20px;
+    }
+
+    .join-section h2 {
+        font-size: 30px;
+    }
+
+
+    /* ボタン */
+
+    .join-button {
+        width: 100%;
+        max-width: 320px;
+    }
 }
